@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Themes } from "../../globalThemeColor";
+import backgroundImage from "../../assets/images/background-home.jpg"
 
 export const ContainerHeader = styled.div`
   background: rgb(0, 32, 114);
@@ -8,6 +8,9 @@ export const ContainerHeader = styled.div`
     rgba(0, 32, 114, 1) 0%,
     rgba(142, 31, 150, 1) 100%
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const Head = styled.header`
@@ -18,10 +21,10 @@ export const Head = styled.header`
   height: 5rem;
 `;
 export const Search = styled.input`
-  width: 28rem;
+  width: 35rem;
   height: 2.6rem;
   border-radius: 5px;
-  max-width: 30rem;
+  max-width: 35rem;
   margin: 0 2rem;
   padding: 8px 11px 6px 6px;
 
