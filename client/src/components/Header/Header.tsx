@@ -23,7 +23,7 @@ export const Header: React.FC<{}> = () => {
         <IconUser alt="user" src={UserIcon} />
       </Head>
       <SubHeader>
-        <ListCategories>
+        <ListCategories> 
           <Category>Todos</Category>
           <Category>Filmes</Category>
           <Category>Series</Category>
