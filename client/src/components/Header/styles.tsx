@@ -5,8 +5,8 @@ export const ContainerHeader = styled.div`
   background: rgb(0, 32, 114);
   background: linear-gradient(
     180deg,
-    rgba(0, 32, 114, 1) 0%,
-    rgba(142, 31, 150, 1) 100%
+    #002072 0%,
+    #8e1f96 100%
   );
   display: flex;
   flex-direction: column;
