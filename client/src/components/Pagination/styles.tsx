@@ -25,5 +25,8 @@ export const LinkPage = styled.a`
   background-color: ${(props: { active: Boolean}) => props.active && "#4caf50" };
   border: 1px solid ${(props: { active: Boolean}) => props.active && "#4caf50" };
   color: ${(props: { active: Boolean}) => props.active && "#ffff" };
-
+  
+  @media (max-width: 750px) {
+     padding: 4px 8px;
+  }
 `;

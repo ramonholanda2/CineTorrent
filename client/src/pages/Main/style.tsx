@@ -4,6 +4,10 @@ import globalThemeColor from "../../globalThemeColor";
 export const MainContainer = styled.div`
   display: flex;
   padding: 0 10px;
+  
+  @media (max-width: 960px) {
+      flex-direction: column;
+  }
 `;
 
 export const Movies = styled.div`

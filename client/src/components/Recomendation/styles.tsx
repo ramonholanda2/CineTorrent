@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const RecomendationsContainer = styled.nav`
   width: 15.8rem;
+  @media (max-width: 960px) {
+    width: 100%;
+  }
 `;
 
 export const RecomendationTitle = styled.h2`
@@ -30,6 +33,14 @@ export const MovieRecomended = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 0.6rem;
+  
+  @media (max-width: 960px) {
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    padding-left: 10px;
+  }
+
 `;
 
 export const MoviedRecomendedImg = styled.img`
@@ -42,6 +53,20 @@ export const MoviedRecomendedImg = styled.img`
   overflow: hidden;
 
   cursor: pointer;
+
+  @media (max-width: 960px) {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  @media (max-width: 750px) {
+    width: 23rem;
+    height: 15rem;
+  }
+
+  @media (max-width: 500px) {
+    width: 28rem;
+  }
 `;
 export const MoviedRecomendedName = styled.a`
   padding: 0 10px;

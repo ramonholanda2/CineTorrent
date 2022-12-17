@@ -26,6 +26,17 @@ export const MovieImage = styled.img`
   &:hover {
     box-shadow: 0 0 3px 2px ${() => globalThemeColor.ThemeLight.secondary};
   }
+
+
+  @media (max-width: 750px) {
+    height: 18rem;
+    width: 14rem;
+  }
+
+  @media (max-width: 550px) {
+    height: 15rem;
+    width: 10rem;
+  }
 `;
 
 export const Informations = styled.div`
@@ -42,20 +53,35 @@ export const InformationsTitle = styled.div`
   font-family: "Fira Sans", sans-serif;
 `;
 
-export const Informatiom = styled.div`
+export const Information = styled.div`
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
   font-size: 0.9rem;
 `;
 
-export const InformatiomTitle = styled.span`
+export const InformationContent = styled.div``;
+
+export const InformationTitle = styled.span`
   font-family: "Fira Sans", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
+  word-break: normal;
+
+  @media (max-width: 550px) {
+    font-size: .8rem;
+  }
 `;
 
 export const InformationDescription = styled.span`
   font-size: 0.8rem;
+  word-break: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  @media (max-width: 550px) {
+    font-size: .78rem;
+  }
 `;
 
 export const MovieTitle = styled.a`
@@ -72,5 +98,9 @@ export const MovieTitle = styled.a`
 
   &:hover {
     color: #d70202ed;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 1.3rem;
   }
 `;

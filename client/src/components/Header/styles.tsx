@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import backgroundImage from "../../assets/images/background-home.jpg"
+import backgroundImage from "../../assets/images/background-home.jpg";
 
 export const ContainerHeader = styled.div`
   background: rgb(0, 32, 114);
-  background: linear-gradient(
-    180deg,
-    #002072 0%,
-    #8e1f96 100%
-  );
+  background: linear-gradient(180deg, #002072 0%, #8e1f96 100%); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,6 +27,10 @@ export const Search = styled.input`
   &:focus {
     border: solid 4px #a0bed9;
     outline: none;
+  }
+
+  @media (max-width: 960px) {
+    height: 2.2rem;
   }
 `;
 
@@ -61,6 +61,10 @@ export const Category = styled.li`
 
   &:hover {
     font-weight: 600;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 1.1rem;
   }
 `;
 

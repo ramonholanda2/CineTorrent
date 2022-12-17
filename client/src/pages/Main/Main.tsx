@@ -13,8 +13,8 @@ export const Main: React.FC<{}> = () => {
         <Movie />
         <Movie /> 
         <Movie />
+        
         <LiveHorizontal />
-
         <Pagination />
       </Movies>
       <Line />

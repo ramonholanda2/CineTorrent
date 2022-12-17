@@ -1,7 +1,11 @@
 import React from "react";
+import useWindowDimensions from "../../Hooks/GetWidthAndHeightScreen";
+import { WindowDimensions } from "../../types/WindowDimensions";
 import { LinkPage, Page, Pages } from "./styles";
 
 export const Pagination: React.FC<{}> = (): JSX.Element => {
+  const { width }: WindowDimensions = useWindowDimensions();
+
   return (
     <Pages>
       <Page>
@@ -22,21 +26,25 @@ export const Pagination: React.FC<{}> = (): JSX.Element => {
       <Page>
         <LinkPage active={false}>5</LinkPage>
       </Page>
-      <Page>
-        <LinkPage active={false}>6</LinkPage>
-      </Page>
-      <Page>
-        <LinkPage active={false}>7</LinkPage>
-      </Page>
-      <Page>
-        <LinkPage active={false}>8</LinkPage>
-      </Page>
-      <Page>
-        <LinkPage active={false}>9</LinkPage>
-      </Page>
-      <Page>
-        <LinkPage active={false}>10</LinkPage>
-      </Page>
+      {width > 450 && (
+        <>
+          <Page>
+            <LinkPage active={false}>6</LinkPage>
+          </Page>
+          <Page>
+            <LinkPage active={false}>7</LinkPage>
+          </Page>
+          <Page>
+            <LinkPage active={false}>8</LinkPage>
+          </Page>
+          <Page>
+            <LinkPage active={false}>9</LinkPage>
+          </Page>
+          <Page>
+            <LinkPage active={false}>10</LinkPage>
+          </Page>
+        </>
+      )}
       <Page>
         <LinkPage active={false}>»</LinkPage>
       </Page>

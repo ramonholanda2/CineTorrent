@@ -1,8 +1,23 @@
 import React from "react";
 import backgroundImage from "../../assets/images/background-home.jpg";
-import { Informatiom, InformatiomTitle, InformationDescription, Informations, InformationsTitle, MovieContainer, MovieDetails, MovieImage, MovieTitle } from "./styles";
+import useWindowDimensions from "../../Hooks/GetWidthAndHeightScreen";
+import { WindowDimensions } from "../../types/WindowDimensions";
+import {
+  Information,
+  InformationTitle,
+  InformationDescription,
+  Informations,
+  InformationsTitle,
+  MovieContainer,
+  MovieDetails,
+  MovieImage,
+  MovieTitle,
+  InformationContent,
+} from "./styles";
 
 function Movie() {
+  const { width }: WindowDimensions = useWindowDimensions();
+
   return (
     <MovieContainer>
       <MovieTitle href="https://www.google.com">
@@ -13,55 +28,82 @@ function Movie() {
         <MovieImage src={backgroundImage} />
         <Informations>
           <InformationsTitle>Informações</InformationsTitle>
-          <Informatiom>
-            <InformatiomTitle>Título original: &nbsp;</InformatiomTitle>
-            <InformationDescription>Emancipation</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Título Traduzido: &nbsp;</InformatiomTitle>
-            <InformationDescription>
-              {" "}
-              Emancipação – Uma História de Liberdade
-            </InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Gênero: &nbsp;</InformatiomTitle>
-            <InformationDescription>
-              Drama | História | Suspense
-            </InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Duração: &nbsp;</InformatiomTitle>
-            <InformationDescription>2h 05min</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>IMDB: &nbsp;</InformatiomTitle>
-            <InformationDescription>9</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Formato: &nbsp;</InformatiomTitle>
-            <InformationDescription>MKV</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Áudio: &nbsp;</InformatiomTitle>
-            <InformationDescription>Portugês | Inglês</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Legenda: &nbsp;</InformatiomTitle>
-            <InformationDescription>Português</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Qualidade de Áudio: &nbsp;</InformatiomTitle>
-            <InformationDescription>10</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Qualidade de Vídeo: &nbsp;</InformatiomTitle>
-            <InformationDescription>10</InformationDescription>
-          </Informatiom>
-          <Informatiom>
-            <InformatiomTitle>Servidor: &nbsp;</InformatiomTitle>
-            <InformationDescription>Torrent</InformationDescription>
-          </Informatiom>
+          {width > 550 && (
+            <Information>
+              <InformationContent>
+                <InformationTitle>Título original: &nbsp;</InformationTitle>
+                <InformationDescription>Emancipation</InformationDescription>
+              </InformationContent>
+            </Information>
+          )}
+          <Information>
+            <InformationContent>
+              <InformationTitle>Título Traduzido: &nbsp;</InformationTitle>
+              <InformationDescription>
+                Emancipação – Uma História de Liberdade
+              </InformationDescription>
+            </InformationContent>
+          </Information>
+          <Information>
+            <InformationContent>
+              <InformationTitle>Gênero: &nbsp;</InformationTitle>
+              <InformationDescription>
+                Drama | História | Suspense
+              </InformationDescription>
+            </InformationContent>
+          </Information>
+          <Information>
+            <InformationContent>
+              <InformationTitle>Duração: &nbsp;</InformationTitle>
+              <InformationDescription>2h 05min</InformationDescription>
+            </InformationContent>
+          </Information>
+          {width > 550 && (
+            <Information>
+              <InformationContent>
+                <InformationTitle>IMDB: &nbsp;</InformationTitle>
+                <InformationDescription>9</InformationDescription>
+              </InformationContent>
+            </Information>
+          )}
+          <Information>
+            <InformationContent>
+              <InformationTitle>Formato: &nbsp;</InformationTitle>
+              <InformationDescription>MKV</InformationDescription>
+            </InformationContent>
+          </Information>
+          <Information>
+            <InformationContent>
+              <InformationTitle>Áudio: &nbsp;</InformationTitle>
+              <InformationDescription>Portugês | Inglês</InformationDescription>
+            </InformationContent>
+          </Information>
+          <Information>
+            <InformationContent>
+              <InformationTitle>Legenda: &nbsp;</InformationTitle>
+              <InformationDescription>Português</InformationDescription>
+            </InformationContent>
+          </Information>
+          <Information>
+            <InformationContent>
+              <InformationTitle>Qualidade de Áudio: &nbsp;</InformationTitle>
+              <InformationDescription>10</InformationDescription>
+            </InformationContent>
+          </Information>
+          <Information>
+            <InformationContent>
+              <InformationTitle>Qualidade de Vídeo: &nbsp;</InformationTitle>
+              <InformationDescription>10</InformationDescription>
+            </InformationContent>
+          </Information>
+          {width > 550 && (
+            <Information>
+              <InformationContent>
+                <InformationTitle>Servidor: &nbsp;</InformationTitle>
+                <InformationDescription>Torrent</InformationDescription>
+              </InformationContent>
+            </Information>
+          )}
         </Informations>
       </MovieDetails>
     </MovieContainer>
