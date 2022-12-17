@@ -1,14 +1,19 @@
 import React from "react";
-import { Home } from "./Home/Home";
+import { Header } from "./components/Header/Header";
 import { Main } from "./pages/Main/Main";
 
-function App() {
-  return (
-    <>
-      <Home />
-      <Main/>
-    </>
-  );
-}
 
-export default App;
+import { createBrowserRouter } from "react-router-dom";
+
+export const router = createBrowserRouter([
+
+  {
+    path: "/",
+    element: [<Header />,  <Main/>],
+  },
+  {
+    path: "/:id",
+    element: [<Header />],
+  },
+]);
+
