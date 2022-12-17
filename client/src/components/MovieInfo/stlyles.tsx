@@ -9,7 +9,11 @@ export const MovieContainer = styled.div`
   border-radius: 5px;
   padding: 0.3rem 0.5rem;
   background-color: #f0efef;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
+`;
+
+export const MovieDetailContainer = styled(MovieContainer)`
+  margin-top: 2rem;
 `;
 
 export const MovieDetails = styled.div`
@@ -26,7 +30,6 @@ export const MovieImage = styled.img`
   &:hover {
     box-shadow: 0 0 3px 2px ${() => globalThemeColor.ThemeLight.secondary};
   }
-
 
   @media (max-width: 750px) {
     height: 18rem;
@@ -60,7 +63,11 @@ export const Information = styled.div`
   font-size: 0.9rem;
 `;
 
-export const InformationContent = styled.div``;
+export const InformationContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const InformationTitle = styled.span`
   font-family: "Fira Sans", sans-serif;
@@ -69,7 +76,7 @@ export const InformationTitle = styled.span`
   word-break: normal;
 
   @media (max-width: 550px) {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -80,7 +87,7 @@ export const InformationDescription = styled.span`
   text-overflow: ellipsis;
   font-weight: 500;
   @media (max-width: 550px) {
-    font-size: .78rem;
+    font-size: 0.78rem;
   }
 `;
 

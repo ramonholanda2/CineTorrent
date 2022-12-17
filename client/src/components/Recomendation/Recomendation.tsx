@@ -33,6 +33,20 @@ export const Recommendation: React.FC<{}> = () => {
           Download
         </MoviedRecomendedName>
       </MovieRecomended>
+      <MovieRecomended>
+        <MoviedRecomendedImg src={backgroundImage} />
+        <MoviedRecomendedName href="https://google.com">
+          Em busca da verdade Dual Áudio 5.1 / Dublado WEB-DL 720p | 1080p –
+          Download
+        </MoviedRecomendedName>
+      </MovieRecomended>
+      <MovieRecomended>
+        <MoviedRecomendedImg src={backgroundImage} />
+        <MoviedRecomendedName href="https://google.com">
+          Em busca da verdade Dual Áudio 5.1 / Dublado WEB-DL 720p | 1080p –
+          Download
+        </MoviedRecomendedName>
+      </MovieRecomended>
       
    
     </RecomendationsContainer>

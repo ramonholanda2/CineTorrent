@@ -1,25 +1,25 @@
 import React from "react";
-import backgroundImage from "../../assets/images/background-home.jpg";
-import useWindowDimensions from "../../Hooks/GetWidthAndHeightScreen";
-import { WindowDimensions } from "../../types/WindowDimensions";
 import {
   Information,
   InformationTitle,
   InformationDescription,
   Informations,
   InformationsTitle,
-  MovieContainer,
+  MovieDetailContainer,
   MovieDetails,
   MovieImage,
   MovieTitle,
   InformationContent,
 } from "../MovieInfo/stlyles";
+import backgroundImage from "../../assets/images/background-home.jpg";
+import { WindowDimensions } from "../../types/WindowDimensions";
+import useWindowDimensions from "../../Hooks/GetWidthAndHeightScreen";
 
-function Movie() {
+export const MovieDetail: React.FC<{}> = () => {
   const { width }: WindowDimensions = useWindowDimensions();
 
   return (
-    <MovieContainer>
+    <MovieDetailContainer>
       <MovieTitle href="https://www.google.com">
         Em busca da verdade Dual Áudio 5.1 / Dublado WEB-DL 720p | 1080p –
         Download
@@ -106,8 +106,6 @@ function Movie() {
           )}
         </Informations>
       </MovieDetails>
-    </MovieContainer>
+    </MovieDetailContainer>
   );
-}
-
-export default Movie;
+};

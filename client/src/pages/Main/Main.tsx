@@ -20,6 +20,6 @@ export const Main: React.FC<{}> = () => {
       </Movies>
       <Line />
       <Recommendation />
-    </MainContainer><Footer /></>
+    </MainContainer></>
   );
 };
