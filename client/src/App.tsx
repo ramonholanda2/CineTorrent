@@ -1,14 +1,19 @@
 import React from "react";
-import { Home } from "./Home/Home";
+import { Header } from "./components/Header/Header";
 import { Main } from "./pages/Main/Main";
+import { createBrowserRouter } from "react-router-dom";
+import { MovieDetails } from "./pages/MovieDetails/MovieDetails";
+import { Footer } from "./components/Footer/Footer";
 
-function App() {
-  return (
-    <>
-      <Home />
-      <Main/>
-    </>
-  );
-}
+export const router = createBrowserRouter([
 
-export default App;
+  {
+    path: "/",
+    element: [<Header />,  <Main/>, <Footer/>],
+  },
+  {
+    path: "/:id",
+    element: [<Header />, <MovieDetails/>, <Footer/>],
+  },
+]);
+

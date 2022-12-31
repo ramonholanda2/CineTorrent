@@ -1,18 +1,25 @@
 import React from "react";
-import GlobalThemeColor from "../../globalThemeColor";
-import backgroundImage from "../../assets/images/background-home.jpg";
 
 import { MainContainer, Movies } from "./style";
 import Movie from "../../components/Movie/Movie";
-import Recomendatiom from "../../components/Recomendatiom/Recomendatiom";
+import { Recommendation } from "../../components/Recomendation/Recomendation";
+import { Pagination } from "../../components/Pagination/Pagination";
+import { Line, LiveHorizontal } from "../../components/Line/LineStyled";
+import { Footer } from "../../components/Footer/Footer";
 
 export const Main: React.FC<{}> = () => {
   return (
-    <MainContainer>
+    <><MainContainer>
       <Movies>
         <Movie />
+        <Movie />
+        <Movie />
+
+        <LiveHorizontal />
+        <Pagination />
       </Movies>
-      <Recomendatiom />
-    </MainContainer>
+      <Line />
+      <Recommendation />
+    </MainContainer></>
   );
 };
