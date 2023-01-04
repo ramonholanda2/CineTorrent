@@ -1,8 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import "dotenv/config";
 import Movie from "../models/Movie.model";
-import { Dialect, Model } from "sequelize";
-
+import { Dialect } from "sequelize";
 export class Database {
   private sequelize: Sequelize;
 
@@ -30,6 +29,8 @@ export class Database {
       await this.sequelize.authenticate();
       await this.sequelize.sync({
         alter: process.env.AMBIENT === "development",
+        force: process.env.AMBIENT === "development",
+        logging: false
       });
       console.error("database connect sucessfull");
     } catch (err) {

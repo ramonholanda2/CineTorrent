@@ -1,6 +1,6 @@
-import express, { NextFunction, Request, Response, json } from "express";
-import Movie from "./models/Movie.model";
+import express, { json } from "express";
 import { Database } from "./DB/Database";
+import movieRoutes from "./routes/movie.routes";
 
 class App {
   public express: express.Application;
@@ -19,6 +19,7 @@ class App {
   }
 
   routes() {
+    this.express.use("/movie", movieRoutes);
   }
 
   listen(port: number) {
