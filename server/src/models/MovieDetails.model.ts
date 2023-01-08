@@ -1,13 +1,18 @@
-import { Table, Column, Model, DataType } from "sequelize-typescript";
+import { Table, Column, Model, DataType, HasOne, BelongsTo, ForeignKey } from 'sequelize-typescript';
 import MovieDetailsAttibutes from '../interfaces/MovieDetails.interface';
 import { MovieDetailsInput } from '../interfaces/MovieDetails.interface';
 import MovieDownloadAttibutes from '../interfaces/MovieDownload.interface';
+import Movie from "./Movie.model";
+import MovieDownload from './MovieDownload.model';
 
 @Table({
-  tableName: "MovieDownload",
+  tableName: "MovieDetails",
   timestamps: true
 })
 class MovieDetails extends Model<MovieDetailsAttibutes, MovieDetailsInput> implements MovieDetailsAttibutes {
+
+  @ForeignKey(() => MovieDownload)
+  @ForeignKey(() => Movie)
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,
@@ -39,6 +44,12 @@ class MovieDetails extends Model<MovieDetailsAttibutes, MovieDetailsInput> imple
     allowNull: true
   })
   declare downloads: MovieDownloadAttibutes[];
+
+  @BelongsTo(() =>  Movie) 
+  declare movie: Movie;
+  
+  @BelongsTo(() => MovieDownload)
+  declare movieDownload: MovieDownload[];
 
   declare readonly createdAt: Date;
   declare readonly updatedAt: Date;

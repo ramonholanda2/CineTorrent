@@ -2,6 +2,8 @@ import { Sequelize } from "sequelize-typescript";
 import "dotenv/config";
 import Movie from "../models/Movie.model";
 import { Dialect } from "sequelize";
+import MovieDetails from "../models/MovieDetails.model";
+import MovieDownload from "../models/MovieDownload.model";
 export class Database {
   private sequelize: Sequelize;
 
@@ -17,7 +19,7 @@ export class Database {
       dialect: dbDriver,
     });
 
-    this.sequelize.addModels([Movie]);
+    this.sequelize.addModels([Movie, MovieDetails, MovieDownload]);
   }
 
   public async closeConnection() {
@@ -29,7 +31,8 @@ export class Database {
       await this.sequelize.authenticate();
       await this.sequelize.sync({
         alter: process.env.AMBIENT === "development",
-        logging: false,
+        logging: true,
+        force: true
       });
       console.error("database connect sucessfull");
     } catch (err) {
@@ -37,4 +40,3 @@ export class Database {
     }
   }
 }
- 

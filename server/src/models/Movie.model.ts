@@ -1,83 +1,90 @@
-import { Table, Column, Model, DataType } from "sequelize-typescript";
+import { Table, Column, Model, DataType, HasOne, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import MovieAttibutes, { MovieInput } from "../interfaces/Movie.interface";
+import MovieDetails from './MovieDetails.model';
 
 @Table({
   tableName: "Movies",
-  timestamps: true
+  timestamps: true,
 })
-class Movie extends Model<MovieAttibutes, MovieInput> implements MovieAttibutes {
+class Movie
+  extends Model<MovieAttibutes, MovieInput>
+  implements MovieAttibutes
+{
+  @ForeignKey(() => MovieDetails)
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,
     primaryKey: true,
-    allowNull: false
+    allowNull: false,
   })
   declare uuid: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
   declare name: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
-  declare imageURL : string;
+  declare imageURL: string;
 
   @Column({
     type: DataType.STRING,
   })
-  declare originalTitle : string;
-  
-  @Column({
-    type: DataType.STRING,
-    allowNull: false
-  })
-  declare translatedTitle : string;
+  declare originalTitle: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
-  declare generos : string;
+  declare translatedTitle: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
-  declare duration : string;
+  declare generos: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  declare duration: string;
   @Column({
     type: DataType.INTEGER,
-    allowNull: false
+    allowNull: false,
   })
-  declare scoreIMDB : number;
+  declare scoreIMDB: number;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
-  declare formatMovie : string;
+  declare formatMovie: string;
 
   @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
   })
   declare audioLanguages: string;
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: false
+    allowNull: false,
   })
-  declare qualityAudio : number;
+  declare qualityAudio: number;
 
   @Column({
     type: DataType.INTEGER,
-    allowNull: false
+    allowNull: false,
   })
-  declare qualityVideo : number;
-
+  declare qualityVideo: number;
+  
+  @BelongsTo(() => MovieDetails)
+  declare movieDetails: MovieDetails;
 
   declare readonly createdAt: Date;
   declare readonly updatedAt: Date;
