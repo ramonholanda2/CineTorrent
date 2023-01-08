@@ -4,9 +4,11 @@ import movieRoutes from "./routes/movie.routes";
 
 class App {
   public express: express.Application;
+  private database: Database;
 
   constructor() {
     this.express = express();
+    this.database = new Database()
 
     this.middlewares();
     this.routes();
@@ -22,14 +24,14 @@ class App {
     this.express.use("/movie", movieRoutes);
   }
 
-  listen(port: number) {
+  listen(port: number) { 
     this.express.listen(port, () => {
       console.log("rodando na porta: " + port);
     });
   }
 
   connectDB() {
-    new Database().connect();
+    this.database.connect();
   }
 }
 

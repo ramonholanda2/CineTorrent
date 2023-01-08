@@ -1,4 +1,4 @@
-import { Table, Column, Model, HasMany, DataType } from "sequelize-typescript";
+import { Table, Column, Model, DataType } from "sequelize-typescript";
 import MovieAttibutes, { MovieInput } from "../interfaces/Movie.interface";
 
 @Table({
@@ -12,7 +12,7 @@ class Movie extends Model<MovieAttibutes, MovieInput> implements MovieAttibutes 
     primaryKey: true,
     allowNull: false
   })
-  declare id: string;
+  declare uuid: string;
 
   @Column({
     type: DataType.STRING,

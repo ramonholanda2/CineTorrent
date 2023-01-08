@@ -29,8 +29,7 @@ export class Database {
       await this.sequelize.authenticate();
       await this.sequelize.sync({
         alter: process.env.AMBIENT === "development",
-        force: process.env.AMBIENT === "development",
-        logging: false
+        logging: false,
       });
       console.error("database connect sucessfull");
     } catch (err) {
@@ -38,3 +37,4 @@ export class Database {
     }
   }
 }
+ 

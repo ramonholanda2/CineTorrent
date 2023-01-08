@@ -1,12 +1,21 @@
 import { Optional } from "sequelize";
 
 export default interface MovieAttibutes {
-  id: string;
+  uuid: string;
   name: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
+  imageURL: string;
+  originalTitle: string;
+  translatedTitle: string;
+  generos: string;
+  duration: string;
+  scoreIMDB: number;
+  formatMovie: string;
+  audioLanguages: string;
+  qualityAudio: number;
+  qualityVideo: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export interface MovieInput extends Optional<MovieAttibutes, 'id'> {}
+export interface MovieInput extends Optional<MovieAttibutes, "uuid"> {}
 export interface MovieOuput extends Required<MovieAttibutes> {}
