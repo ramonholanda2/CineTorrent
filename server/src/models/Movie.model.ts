@@ -1,6 +1,14 @@
-import { Table, Column, Model, DataType, HasOne, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  HasOne,
+  ForeignKey,
+  BelongsTo,
+} from "sequelize-typescript";
 import MovieAttibutes, { MovieInput } from "../interfaces/Movie.interface";
-import MovieDetails from './MovieDetails.model';
+import MovieDetails from "./MovieDetails.model";
 
 @Table({
   tableName: "Movies",
@@ -10,7 +18,6 @@ class Movie
   extends Model<MovieAttibutes, MovieInput>
   implements MovieAttibutes
 {
-  @ForeignKey(() => MovieDetails)
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,
@@ -82,8 +89,8 @@ class Movie
     allowNull: false,
   })
   declare qualityVideo: number;
-  
-  @BelongsTo(() => MovieDetails)
+
+  @HasOne(() => MovieDetails)
   declare movieDetails: MovieDetails;
 
   declare readonly createdAt: Date;

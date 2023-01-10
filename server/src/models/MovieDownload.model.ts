@@ -20,6 +20,13 @@ export class MovieDownload
   })
   declare uuid: string;
 
+  @ForeignKey(() => MovieDetails)
+  @Column({
+    type: DataType.UUID,
+    allowNull: false,
+  })
+  declare movieDownloadUUID : string;
+
   @Column({
     type: DataType.STRING,
     allowNull: false,

@@ -1,4 +1,5 @@
 import { Optional } from "sequelize";
+import MovieDetails from '../models/MovieDetails.model';
 
 export default interface MovieAttibutes {
   uuid: string;
@@ -13,6 +14,7 @@ export default interface MovieAttibutes {
   audioLanguages: string;
   qualityAudio: number;
   qualityVideo: number;
+  movieDetails: MovieDetails
   createdAt: Date;
   updatedAt: Date;
 }

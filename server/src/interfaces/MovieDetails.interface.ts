@@ -3,10 +3,11 @@ import MovieDownload from './MovieDownload.interface';
 
 export default interface MovieDetailsAttibutes {
   uuid: string;
-  parentUUID: string;
+  movieUUID: string;
   sinopse: string;
   trailer: string;
-  downloads: MovieDownload[];
+  quantityVisits: number;
+  movieDownload: MovieDownload[];
 }
 
 export interface MovieDetailsInput extends Optional<MovieDetailsAttibutes, "uuid"> {}

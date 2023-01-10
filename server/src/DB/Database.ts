@@ -34,7 +34,7 @@ export class Database {
         logging: true,
         force: true
       });
-      console.error("database connect sucessfull");
+      console.log("database connect sucessfull");
     } catch (err) {
       console.error("failed to connect database");
     }
